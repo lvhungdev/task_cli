@@ -64,7 +64,7 @@ func (repo TaskRepository) AddTask(task core.Task) (core.Task, error) {
 
 func (repo TaskRepository) UpdateTask(task core.Task) (core.Task, error) {
 	updatedTask, err := repo.client.Task.
-		UpdateOneID(task.ID).
+		UpdateOneID(task.Id).
 		SetTitle(task.Title).
 		SetIsDone(task.IsDone).
 		SetNillableDoneDate(task.DoneDate).
@@ -85,7 +85,7 @@ func (repo TaskRepository) RemoveTask(id int) error {
 
 func mapEntToCoreTask(task ent.Task) core.Task {
 	return core.Task{
-		ID:       task.ID,
+		Id:       task.ID,
 		Title:    task.Title,
 		IsDone:   task.IsDone,
 		DoneDate: task.DoneDate,

@@ -3,7 +3,7 @@ package core
 import "time"
 
 type Task struct {
-	ID       int
+	Id       int
 	Title    string
 	IsDone   bool
 	DoneDate *time.Time
